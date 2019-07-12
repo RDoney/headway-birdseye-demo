@@ -1,5 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#031c7f',
+      light: '#7160f6',
+      dark: '#071461',
+      muddy: '#443cb2',
+    },
+    secondary: {
+      main: '#fbe64d',
+      dark: '#f5b54c',
+    },
+  },
+  typography: {
+    fontFamily: 'Source Sans Pro',
+  },
+});
+console.log(theme);
 
 const Layout = props => (
   <>
@@ -10,9 +30,13 @@ const Layout = props => (
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
       />
+      {/* TODO: self-host fonts */}
+      <link
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap"
+        rel="stylesheet"
+      ></link>
     </Helmet>
-
-    <div>{props.children}</div>
+    <MuiThemeProvider theme={theme}>{props.children}</MuiThemeProvider>
   </>
 );
 
