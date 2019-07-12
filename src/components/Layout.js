@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const theme = createMuiTheme({
   palette: {
@@ -8,7 +9,6 @@ const theme = createMuiTheme({
       main: '#031c7f',
       light: '#7160f6',
       dark: '#071461',
-      muddy: '#443cb2',
     },
     secondary: {
       main: '#fbe64d',
@@ -36,7 +36,10 @@ const Layout = props => (
         rel="stylesheet"
       ></link>
     </Helmet>
-    <MuiThemeProvider theme={theme}>{props.children}</MuiThemeProvider>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      {props.children}
+    </MuiThemeProvider>
   </>
 );
 
