@@ -35,10 +35,10 @@ const useStyles = makeStyles(theme => ({
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+    textAlign: 'center',
   },
   button: {
-    color: theme.palette.common.black,
-    marginTop: '1rem',
+    margin: '1rem 0',
   },
   artwork: {
     backgroundColor: '#031c7f',
@@ -130,7 +130,8 @@ function App() {
                 autoComplete="current-password"
               />
               <Button
-                type="submit"
+                href="/dashboard"
+                color="primary"
                 fullWidth
                 variant="contained"
                 className={classes.button}
@@ -138,8 +139,9 @@ function App() {
                 Sign In
               </Button>
               <Button
-                type="submit"
+                href="/dashboard"
                 fullWidth
+                color="primary"
                 variant="outlined"
                 className={classes.button}
               >
